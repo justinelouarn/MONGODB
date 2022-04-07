@@ -1,5 +1,6 @@
 #importation des packages
 from pymongo import MongoClient
+import matplotlib.pyplot as plt
 
 #importation de la base
 db_uri = "mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/"
@@ -15,14 +16,23 @@ cursor_agreg = coll.aggregate([
 ])
 
 # affichage
-# for agreg in cursor_agreg:
-#     print(agreg["nb_restos"], "restaurants dans le quartier", agreg["_id"])
 
-liste_nb = []
-liste_quartier = []
-for obj in cursor_agreg :
-    liste_nb.append(obj["nb_restos"])
-    liste_quartier.append(obj["_id"])
+liste_nb=[]
+liste_qrt=[]
+for agreg in cursor_agreg:
+    liste_nb.append(agreg["nb_restos"])
+    liste_qrt.append(agreg["_id"])
+print(liste_nb)
+print(liste_qrt)
+
+
+# Création du graphe
+plt.figure(figsize = (10, 5))
+plt.bar(liste_qrt, liste_nb, color ='blue', width = 0.4)
+plt.xlabel("Quartier")
+plt.ylabel("Nombre")
+plt.title("Nombre de restaurants par quartier")
+plt.show()
 
 print(liste_nb)
 print(liste_quartier)
