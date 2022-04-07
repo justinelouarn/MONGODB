@@ -7,14 +7,12 @@ client = MongoClient(db_uri)
 db = client["food"]
 coll = db["NYfood"]
 
-
-# aggrégation
+# Nombre de restau par quartiers 
 cursor_agreg = coll.aggregate([
   {"$group": {"_id": "$borough",
               "nb_restos": {"$sum": 1}}
   }
 ])
-
 # affichage
 for agreg in cursor_agreg:
     print(agreg["nb_restos"], "restaurants dans le quartier", agreg["_id"])
