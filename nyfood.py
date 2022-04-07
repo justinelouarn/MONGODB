@@ -8,4 +8,16 @@ db = client["food"]
 coll = db["NYfood"]
 
 
+# aggrégation
+cursor_agreg = coll.aggregate([
+  {"$group": {"_id": "$borough",
+              "nb_restos": {"$sum": 1}}
+  }
+])
+
+# affichage
+for agreg in cursor_agreg:
+    print(agreg["nb_restos"], "restaurants dans le quartier", agreg["_id"])
+
+
 
