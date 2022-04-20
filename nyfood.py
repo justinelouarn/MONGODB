@@ -36,4 +36,4 @@ plt.title("Nombre de restaurants par quartier")
 plt.show()
 
 print(liste_nb)
-
+print(liste_qrt)
