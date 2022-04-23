@@ -267,7 +267,7 @@ HOVER_TOOLTIPS = [ ("Prenom ", "@index"), ("Publications totales ", "@adjusted_n
 nx_graph = from_networkx(P, nx.circular_layout, scale=10, center=(0, 0)) 
 
 
-plot = figure(tooltips = HOVER_TOOLTIPS,
+fig = figure(tooltips = HOVER_TOOLTIPS,
               tools="pan,wheel_zoom,save,reset", active_scroll='wheel_zoom',
               x_range=Range1d(-15, 15), y_range=Range1d(-15, 15),title='Réseau des 20 auteurs les plus prolifiques avec au moins une co-publication')
 
@@ -300,7 +300,7 @@ nx_graph.node_renderer.glyph = Circle(size='adjusted_node_size', fill_color=line
 
 
 nx_graph.edge_renderer.glyph = MultiLine(line_alpha=0.6, line_width='weight') 
-plot.renderers.append(nx_graph)
+fig.renderers.append(nx_graph)
 
 
 
@@ -323,6 +323,6 @@ div = Div(text="""
 #                                                       #
 #########################################################
 
-layout = Row(Column(div, plot))
+layout = Row(Column(div, fig))
 output_file("Publications.html")
 show(layout)
