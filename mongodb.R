@@ -85,7 +85,8 @@ for (i in 1:nrow(docto)){
 #_id ne s'affiche pas, on le renomme en name
 colnames(docto)[1] <- 'name'
 
-leaflet(data = docto) %>% addTiles() %>%
+carte_docto <- leaflet(data = docto) %>% addTiles() %>%
   addCircleMarkers(~ lng, ~ lat,stroke = FALSE, fillOpacity = 0.7,
                    popup = ~paste("Le centre de vaccination ", name, " a ",as.character(nb),' créneaux ouverts.'), color =col)
 
+htmlwidgets::saveWidget(carte_docto, file="carte_docto.html")
