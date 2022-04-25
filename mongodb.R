@@ -82,11 +82,10 @@ for (i in 1:nrow(docto)){
 }
 
 #CARTE
-#_id ne s'affiche pas, on le renomme
-
+#_id ne s'affiche pas, on le renomme en name
 colnames(docto)[1] <- 'name'
 
 leaflet(data = docto) %>% addTiles() %>%
   addCircleMarkers(~ lng, ~ lat,stroke = FALSE, fillOpacity = 0.7,
-                   popup = ~name, color =col)
+                   popup = ~paste("Le centre de vaccination ", name, " a ",as.character(nb),' créneaux ouverts.'), color =col)
 
