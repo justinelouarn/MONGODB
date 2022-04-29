@@ -269,7 +269,7 @@ nx_graph = from_networkx(P, nx.circular_layout, scale=10, center=(0, 0))
 
 fig = figure(tooltips = HOVER_TOOLTIPS,
               tools="pan,wheel_zoom,save,reset", active_scroll='wheel_zoom',
-              x_range=Range1d(-15, 15), y_range=Range1d(-15, 15),title='Réseau des 20 auteurs les plus prolifiques avec au moins une co-publication')
+              x_range=Range1d(-15, 15), y_range=Range1d(-15, 15),title='Réseau des 14 auteurs les plus prolifiques avec au moins une co-publication')
 
 #########################################################
 #                                                       #
@@ -312,9 +312,14 @@ fig.renderers.append(nx_graph)
 #########################################################
 
 div = Div(text="""
+
+
+
 <h1> Réseau de publications scientifiques </h1>
-<p>Ce graphique représente les liens de co-publication des 20 auteurs les plus prolifiques de publications scientifiques de l'IRISA </p>
+<p>Ce graphique représente les liens de co-publication des 20 auteurs les plus prolifiques de publications scientifiques de l'IRISA. </p>
+<p>Nous n'avons pas réussi à afficher les 20 auteurs, car certains n'ont pas effectué de collaboration.</p>
 <p>A l'aide de ce graphique on se rend compte que ce n'est pas le scientifique qui a écrit le plus d'articles (Lefèvre) qui est celui qui a le fait le plus de collaborations.</p>
+<p> Ce sont  : <b>Jézéquel, Rubino, Berder, Martin, Busnel</b> et <b>Legeai</b>.</p>
 """)
 
 #########################################################
