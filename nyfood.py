@@ -76,10 +76,10 @@ p.axis.visible = False
 p.grid.grid_line_color = None
 
 div1 = Div(text="""
-<p><a href="index.html">Sommaire</a></p>
+
 <h2> Répartition des notes attribuées aux restaurants de New York </h2>
  
-<p> La note la plus attribuée pour les restaurants de New York est la note A avec 74 652 attributions.
+<p> <a href="index.html">Sommaire</a> </br> La note la plus attribuée pour les restaurants de New York est la note A avec 74 652 attributions.
 Elle représente plus de 3/4 des attributions. Puis, les notes les plus attribués après A sont dans l'ordre B, C, P et Z.
 Seulement 1 337 restaurants n'ont pas eu de notes</p>""")
 
@@ -106,10 +106,11 @@ p2 = figure(x_range= liste_qrt,title="Nombre de restaurants par quartier",x_axis
 p2.vbar(x=liste_qrt,top=liste_nb, color='purple', width=0.5, alpha=0.5)
 
 div2 = Div(text="""
-<p><a href="index.html">Sommaire</a></p>
+
 <h2> Histogramme du nombre de restaurants par quartier de New York </h2>
  
-<p> Le quartier de New York qui compte le plus de restaurants est Manhattan avec plus de 1000 restaurants. Celui qui compte le moins est Staten Island
+<p> <a href="index.html">Sommaire</a> </br>
+Le quartier de New York qui compte le plus de restaurants est Manhattan avec plus de 1000 restaurants. Celui qui compte le moins est Staten Island
 </p>""")
 layout2 = row(div2, column(p2))
 
