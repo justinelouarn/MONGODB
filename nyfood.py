@@ -76,6 +76,7 @@ p.axis.visible = False
 p.grid.grid_line_color = None
 
 div1 = Div(text="""<h2> Répartition des notes attribuées aux restaurants de New York </h2>
+ <p><a href="index.html">Sommaire</a></p>
 <p> La note la plus attribuée pour les restaurants de New York est la note A avec 74 652 attributions.
 Elle représente plus de 3/4 des attributions. Puis, les notes les plus attribués après A sont dans l'ordre B, C, P et Z.
 Seulement 1 337 restaurants n'ont pas eu de notes</p>""")
