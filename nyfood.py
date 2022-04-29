@@ -108,7 +108,7 @@ tab = Panel(child=layout1, title="PIE CHART")
 tab2 = Panel(child=layout2, title="HISTOGRAMME")
 
 Tabs1 = Tabs(tabs=[tab, tab2])
-output_file("nyfood.html")
+output_file("nyfood_2.html")
 show(Tabs1)
 
 
