@@ -331,4 +331,4 @@ div = Div(text="""
 
 layout = Row(Column(div, fig))
 output_file("Publications.html")
-show(layout)
+show(layout)  
