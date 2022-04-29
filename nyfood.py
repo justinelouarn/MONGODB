@@ -1,15 +1,15 @@
 
-
 from pymongo import MongoClient
 import pandas as pd
 from bokeh.models import ColumnDataSource
 from bokeh.plotting import figure, show, output_file
 from bokeh.transform import dodge
-from bokeh.layouts import column
+from bokeh.layouts import column, row
 from bokeh.models import Div, HoverTool
 from math import pi
 from bokeh.palettes import Category20c
 from bokeh.transform import cumsum
+from bokeh.models.widgets import Tabs, Panel
 
 #importation de la base
 db_uri = "mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/"
@@ -75,13 +75,40 @@ p.axis.axis_label = None
 p.axis.visible = False
 p.grid.grid_line_color = None
 
-show(p)
+div1 = Div(text="""<h1> Répartition des notes attribués aux restaurants de New York </h1>""")
+
+layout1 = row(div1, column(p))
 
 
+#### HISTOGRAMME nombre de restau par quartier
+
+requete2 = coll.aggregate([
+  {"$group": {"_id": "$borough",
+              "nb_restos": {"$sum": 1}}
+  }
+])
+
+# affichage
+
+liste_nb=[]
+liste_qrt=[]
+for agreg in requete2:
+    liste_nb.append(agreg["nb_restos"])
+    liste_qrt.append(agreg["_id"])
+
+p2 = figure(x_range= liste_qrt,title="Nombre de restaurants par quartier",x_axis_label = "Quartiers", y_axis_label = "Nombre de restaurants")
+p2.vbar(x=liste_qrt,top=liste_nb, color='purple', width=0.5, alpha=0.5)
+
+div2 = Div(text="""<h1> Histogramme du nombre de restaurants par quartier de New York </h1>""")
+layout2 = row(div2, column(p2))
 
 
+####### LES ONGLETS
+tab = Panel(child=layout1, title="PIE CHART")
+tab2 = Panel(child=layout2, title="HISTOGRAMME")
 
-
+Tabs1 = Tabs(tabs=[tab, tab2])
+show(Tabs1)
 
 
 

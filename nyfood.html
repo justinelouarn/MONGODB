@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="49aa0afa-7d42-4f98-b993-450307669309" data-root-id="1003"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1162">
+          {"53b8b457-ed5a-4215-8f8b-7a00e202f369":{"defs":[],"roots":{"references":[{"attributes":{"coordinates":null,"group":null,"items":[{"id":"1044"}]},"id":"1043","type":"Legend"},{"attributes":{},"id":"1015","type":"BasicTicker"},{"attributes":{"label":{"field":"notes"},"renderers":[{"id":"1032"}]},"id":"1044","type":"LegendItem"},{"attributes":{"below":[{"id":"1014"}],"center":[{"id":"1017"},{"id":"1021"},{"id":"1043"}],"height":350,"left":[{"id":"1018"}],"renderers":[{"id":"1032"}],"title":{"id":"1004"},"toolbar":{"id":"1023"},"toolbar_location":null,"x_range":{"id":"1006"},"x_scale":{"id":"1010"},"y_range":{"id":"1008"},"y_scale":{"id":"1012"}},"id":"1003","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"1019","type":"BasicTicker"},{"attributes":{},"id":"1036","type":"BasicTickFormatter"},{"attributes":{"field":"angle"},"id":"1026","type":"CumSum"},{"attributes":{"start":-0.5},"id":"1006","type":"Range1d"},{"attributes":{},"id":"1041","type":"UnionRenderers"},{"attributes":{"coordinates":null,"group":null,"text":"Repartition des notes des restaurants de New-York"},"id":"1004","type":"Title"},{"attributes":{"field":"angle","include_zero":true},"id":"1025","type":"CumSum"},{"attributes":{"axis":{"id":"1018"},"coordinates":null,"dimension":1,"grid_line_color":null,"group":null,"ticker":null},"id":"1021","type":"Grid"},{"attributes":{},"id":"1037","type":"AllLabels"},{"attributes":{"axis":{"id":"1014"},"coordinates":null,"grid_line_color":null,"group":null,"ticker":null},"id":"1017","type":"Grid"},{"attributes":{},"id":"1008","type":"DataRange1d"},{"attributes":{"data":{"angle":{"__ndarray__":"gzJmXF0TFECELqphmxzrPz4vYIh9EMs/eQcuLgaatD/4ynB73gK3P44AnF+GCaI/","dtype":"float64","order":"little","shape":[6]},"color":["#3182bd","#6baed6","#9ecae1","#c6dbef","#e6550d","#fd8d3c"],"index":[0,1,2,3,4,5],"notes":["A","B","C","P","Z","Not Yet Graded"],"value":[74652,12602,3145,1197,1337,524]},"selected":{"id":"1042"},"selection_policy":{"id":"1041"}},"id":"1027","type":"ColumnDataSource"},{"attributes":{"coordinates":null,"formatter":{"id":"1036"},"group":null,"major_label_policy":{"id":"1037"},"ticker":{"id":"1019"},"visible":false},"id":"1018","type":"LinearAxis"},{"attributes":{},"id":"1039","type":"BasicTickFormatter"},{"attributes":{},"id":"1012","type":"LinearScale"},{"attributes":{"source":{"id":"1027"}},"id":"1033","type":"CDSView"},{"attributes":{"coordinates":null,"formatter":{"id":"1039"},"group":null,"major_label_policy":{"id":"1040"},"ticker":{"id":"1015"},"visible":false},"id":"1014","type":"LinearAxis"},{"attributes":{},"id":"1042","type":"Selection"},{"attributes":{"callback":null,"tooltips":"@notes: @value"},"id":"1022","type":"HoverTool"},{"attributes":{"coordinates":null,"data_source":{"id":"1027"},"glyph":{"id":"1029"},"group":null,"hover_glyph":null,"muted_glyph":{"id":"1031"},"nonselection_glyph":{"id":"1030"},"view":{"id":"1033"}},"id":"1032","type":"GlyphRenderer"},{"attributes":{"end_angle":{"expr":{"id":"1026"}},"fill_alpha":{"value":0.2},"fill_color":{"field":"color"},"hatch_alpha":{"value":0.2},"line_alpha":{"value":0.2},"line_color":{"value":"white"},"radius":{"value":0.4},"start_angle":{"expr":{"id":"1025"}},"x":{"value":0},"y":{"value":1}},"id":"1031","type":"Wedge"},{"attributes":{},"id":"1040","type":"AllLabels"},{"attributes":{"end_angle":{"expr":{"id":"1026"}},"fill_alpha":{"value":0.1},"fill_color":{"field":"color"},"hatch_alpha":{"value":0.1},"line_alpha":{"value":0.1},"line_color":{"value":"white"},"radius":{"value":0.4},"start_angle":{"expr":{"id":"1025"}},"x":{"value":0},"y":{"value":1}},"id":"1030","type":"Wedge"},{"attributes":{"tools":[{"id":"1022"}]},"id":"1023","type":"Toolbar"},{"attributes":{},"id":"1010","type":"LinearScale"},{"attributes":{"end_angle":{"expr":{"id":"1026"}},"fill_color":{"field":"color"},"line_color":{"value":"white"},"radius":{"value":0.4},"start_angle":{"expr":{"id":"1025"}},"x":{"value":0},"y":{"value":1}},"id":"1029","type":"Wedge"}],"root_ids":["1003"]},"title":"Bokeh Application","version":"2.4.2"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            const fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  const docs_json = document.getElementById('1162').textContent;
+                  const render_items = [{"docid":"53b8b457-ed5a-4215-8f8b-7a00e202f369","root_ids":["1003"],"roots":{"1003":"49aa0afa-7d42-4f98-b993-450307669309"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    let attempts = 0;
+                    const timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
