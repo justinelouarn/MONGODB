@@ -316,6 +316,7 @@ div = Div(text="""
 
 
 <h1> Réseau de publications scientifiques </h1>
+ <p><a href="index.html">Sommaire</a></p>
 <p>Ce graphique représente les liens de co-publication des 20 auteurs les plus prolifiques de publications scientifiques de l'IRISA. </p>
 <p>Nous n'avons pas réussi à afficher les 20 auteurs, car certains n'ont pas effectué de collaboration.</p>
 <p>A l'aide de ce graphique on se rend compte que ce n'est pas le scientifique qui a écrit le plus d'articles (Lefèvre) qui est celui qui a le fait le plus de collaborations.</p>
